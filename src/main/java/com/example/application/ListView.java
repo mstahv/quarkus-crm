@@ -115,7 +115,7 @@ public class ListView extends VerticalLayout {
     }
 
     private void updateList() {
-        grid.setItems(service.findAllContacts(filterText.getValue()));
+        grid.setItems(service.listContacts(filterText.getValue()));
     }
 
 

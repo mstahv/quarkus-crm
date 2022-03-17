@@ -59,8 +59,8 @@ public class CrmService {
         em.remove(em.getReference(Contact.class, contact.id));
     }
 
-    public List<Contact> findAllContacts(String value) {
-        return contactRepository.search(value);
+    public List<Contact> listContacts(String search) {
+        return contactRepository.search(search);
     }
 
     public long countContacts() {

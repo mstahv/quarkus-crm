@@ -9,11 +9,8 @@ import java.util.List;
 @ApplicationScoped
 public class ContactRepository implements PanacheRepository<Contact> {
 
-/*    @Query("select c from Contact c " +
-        "where lower(c.firstName) like lower(concat('%', :searchTerm, '%')) " +
-        "or lower(c.lastName) like lower(concat('%', :searchTerm, '%'))")*/
     public List<Contact> search( String searchTerm) {
-        // TODO
-        return listAll();
+        return list("lower(firstName) like lower(concat('%', ?1, '%')) " +
+        "or lower(lastName) like lower(concat('%', ?1, '%'))", searchTerm);
     }
 }
